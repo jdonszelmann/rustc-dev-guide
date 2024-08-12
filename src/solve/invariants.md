@@ -74,7 +74,8 @@ fn foo<T: Trait>(
 
 Many of the currently known unsound issues end up relying on this invariant being broken.
 It is however very difficult to imagine a sound type system without this invariant, so
-the issue is that the invariant is broken, not that we incorrectly rely on it.
+the invariant is corrrect, we should be able to rely on it, but the current solver 
+sometimes breaks it (which is a bug).
 
 ### Generic goals and their instantiations have the same result ✅
 
