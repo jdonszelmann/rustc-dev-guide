@@ -21,9 +21,9 @@ the assumption that `T: Clone` is true. We can assume `T: Clone` as that will be
 callers of this function.
 
 The concept of "prove the `Vec<T>: Clone` with the assumption `T: Clone`" is called a [`Goal`].
-Both `Vec<T>: Clone` and `T: Clone` are represented using [`Predicate`]. There are other
+Both `Vec<T>: Clone` and `T: Clone` are represented using a [`Predicate`]. There are other
 predicates, most notably equality bounds on associated items: `<Vec<T> as IntoIterator>::Item == T`.
-See the `PredicateKind` enum for an exhaustive list. A `Goal` is represented as the `predicate` we
+See the [`PredicateKind`] enum for an exhaustive list. A `Goal` is represented as the `predicate` we
 have to prove and the `param_env` in which this predicate has to hold.
 
 We prove goals by checking whether each possible [`Candidate`] applies for the given goal by
@@ -42,6 +42,7 @@ For success and ambiguity it also returns constraints inference and region const
 [solve]: https://doc.rust-lang.org/nightly/nightly-rustc/rustc_trait_selection/solve/index.html
 [`Goal`]: https://doc.rust-lang.org/nightly/nightly-rustc/rustc_infer/infer/canonical/ir/solve/struct.Goal.html
 [`Predicate`]: https://doc.rust-lang.org/nightly/nightly-rustc/rustc_middle/ty/struct.Predicate.html
+[`PredicateKind`]: https://doc.rust-lang.org/beta/nightly-rustc/rustc_middle/ty/predicate/type.PredicateKind.html
 [`Candidate`]: https://doc.rust-lang.org/nightly/nightly-rustc/rustc_next_trait_solver/solve/assembly/struct.Candidate.html
 [`CandidateSource`]: https://doc.rust-lang.org/nightly/nightly-rustc/rustc_infer/infer/canonical/ir/solve/enum.CandidateSource.html
 [`CanonicalResponse`]: https://doc.rust-lang.org/nightly/nightly-rustc/rustc_trait_selection/traits/solve/type.CanonicalResponse.html
