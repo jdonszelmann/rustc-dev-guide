@@ -92,7 +92,7 @@ it can easily result in unsoundness, e.g. [#57893](https://github.com/rust-lang/
 
 If a trait goal holds with an empty environment, there should be a unique `impl`,
 either user-defined or builtin, which is used to prove that goal. This is
-necessary to select a unique method. It 
+necessary to select a unique method.
 
 We do however break this invariant in few cases, some of which are due to bugs,
 some by design:
